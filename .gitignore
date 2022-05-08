@@ -23,6 +23,3 @@ hs_err_pid*
 
 # Auto-generated .retry files
 *.retry
-
-# macOS specific
-.DS_Store

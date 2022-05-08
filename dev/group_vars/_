@@ -184,6 +184,4 @@ secure_vault_enabled: false
 # below. An example is provided below.
 # clustering_enable: false
 
-control_plane_memory: -Xms256m -Xmx1024m
-gw_memory: -Xms256m -Xmx1024m
-tm_memory: -Xms256m -Xmx1024m
+control_plane_memory: "../host_vars/{{ control_plane_memory }}"
