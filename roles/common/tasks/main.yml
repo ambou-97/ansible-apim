@@ -14,7 +14,7 @@
 #  limitations under the License.
 #----------------------------------------------------------------------------
 ---
-  - block:
+- block:
     - name: Create group
       group: name=wso2 state=present gid=802
       become: true
@@ -64,5 +64,5 @@
         name: unzip
         state: present
 
-    become: true
-    become_user: root
+  become: true
+  become_user: root

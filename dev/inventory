@@ -1,11 +1,12 @@
 [apim]
-target1 ansible_host=168.138.68.47 ansible_user=target1 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target1/ssh-key-2022-04-25.key
-target2 ansible_host=155.248.228.144 ansible_user=target2 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target2/ssh-key-2022-04-28.key
-
-[micro-integrator]
-micro-integrator ansible_host=155.248.228.144 ansible_user=target2 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target2/ssh-key-2022-04-28.key
+apim_1 ansible_host=168.138.68.47 ansible_user=target1 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target1/ssh-key-2022-04-25.key
+apim-control-plane_1 ansible_host=168.138.68.47 ansible_user=target1 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target1/ssh-key-2022-04-25.key
+apim-gateway_1 ansible_host=155.248.228.144 ansible_user=target2 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target2/ssh-key-2022-04-28.key
+apim-tm_1 ansible_host=155.248.228.144 ansible_user=target2 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target2/ssh-key-2022-04-28.key
 
 # Example
 # [apim]
 # apim_1 ansible_host=172.28.128.4 ansible_user=vagrant
 
+[micro-integrator]
+micro-integrator_1 ansible_host=155.248.228.144 ansible_user=target2 ansible_connection=ssh ansible_user=opc ansible_ssh_private_key_file=/home/opc/resources/tools/target2/ssh-key-2022-04-28.key

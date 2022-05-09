@@ -14,7 +14,7 @@
 #  limitations under the License.
 #----------------------------------------------------------------------------
 ---
-  - block:
+- block:
     # Set installation directory information
     - name: Installation Information
       set_fact:
@@ -121,7 +121,7 @@
       loop: "{{ misc_file_list }}"
       when: misc_file_list is defined
 
-# Enable customization by uncommenting the following and adding the changes to the custom.yml
+    # Enable customization by uncommenting the following and adding the changes to the custom.yml
     # - import_tasks: custom.yml
 
     - name: Change the owner of WSO2 directory
@@ -133,12 +133,12 @@
         group: "{{ wso2_group }}"
         mode: 0755
 
-    when: "(inventory_hostname in groups['apim'])"
-    become: true
-    become_method: sudo
-    become_user: root
+  when: "(inventory_hostname in groups['apim'])"
+  become: true
+  become_method: sudo
+  become_user: root
 
-  - block:
+- block:
     - include: common-tasks/secure-vault.yml
       when: secure_vault_enabled|bool
 
@@ -148,5 +148,5 @@
         state: started
         daemon_reload: yes
 
-    become: true
-    become_user: root
+  become: true
+  become_user: root
