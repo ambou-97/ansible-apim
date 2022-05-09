@@ -18,15 +18,17 @@
 # This playbook deploys the whole application stack in this site.
 
 - name: Apply common configuration to all nodes
-  hosts: target2
+  hosts:
+    - target1
+    - target2
   roles:
     - common
 
-#- name: Apply API Manager default configuration to an apim node
-#  hosts:
-#    - target1
-#  roles:
-#    - apim
+- name: Apply API Manager default configuration to an apim node
+  hosts:
+    - target1
+  roles:
+    - apim
 
 #- name: Apply Micro Integrator default configuration to a micro-integrator node
 #  hosts:
@@ -43,23 +45,30 @@
 #   roles:
 #     - apim-<profile>
 
-#- name: Apply API Management Control Plane configuration to an apim node
-#  hosts:
-#    - target2
-#  roles:
-#    - apim-control-plane
+- name: Apply API Management Control Plane configuration to an apim node
+  hosts:
+    - target2
+  roles:
+    - apim-control-plane
 
-#- name: Apply API Management Gateway configuration to an apim node
-#  hosts:
-#    - target2
-#  roles:
-#    - apim-gateway
+- name: Apply API Management Gateway configuration to an apim node
+  hosts:
+    - target2
+  roles:
+    - apim-gateway
 
 - name: Apply API Management Trafic Manager configuration to an apim node
   hosts:
     - target2
   roles:
     - apim-tm
+
+- name: Apply API Management Micro-Integrator configuration to an apim node
+  hosts:
+    - target2
+  roles:
+    - micro-integrator
+
 
    
 #

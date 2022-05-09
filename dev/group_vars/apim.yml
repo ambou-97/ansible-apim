@@ -187,3 +187,16 @@ secure_vault_enabled: false
 control_plane_memory: -Xms256m -Xmx1024m
 gw_memory: -Xms256m -Xmx1024m
 tm_memory: -Xms256m -Xmx1024m
+
+
+
+ports_offset_mi: 3
+
+# List of configuration file templates of micro-integrator, and the paths they should be written to
+config_files_mi:
+  - { src: 'carbon-home/conf/deployment.toml.j2',
+      dest: '{{ carbon_home }}/conf/deployment.toml' }
+  - { src: 'carbon-home/bin/micro-integrator.sh.j2',
+      dest: '{{ carbon_home }}/bin/micro-integrator.sh' }
+
+mi_memory: -Xms256m -Xmx1024m
